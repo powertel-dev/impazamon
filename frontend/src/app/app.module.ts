@@ -31,8 +31,7 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule,
-    DataTablesModule
+    NgbModule,DataTablesModule
   ],
   providers: [
     {
