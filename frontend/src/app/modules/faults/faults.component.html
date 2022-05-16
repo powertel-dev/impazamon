@@ -1,0 +1,100 @@
+ <!-- start page title -->
+ <div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Faults</a></li>
+                    <li class="breadcrumb-item active">Faults List</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Faults</h4>
+        </div>
+    </div>
+</div>     
+<!-- end page title --> 
+
+<div class="row mb-2">
+    <div class="col-sm-4">
+        <a class="btn btn-primary rounded-pill mb-3"  routerLink="./create" ><i class="mdi mdi-plus"></i> New Fault</a>
+    </div>
+
+    <div class="text-sm-end">
+        <div class="btn-group btn-group-sm mb-3 ms-1" >
+            <button type="button" class="btn btn-info"style="font-size: small;" (click)="filter('') ">All</button>
+            <button type="button" class="btn btn-danger"style="font-size: small;" (click)="filter('new fault')">New Faults</button>
+            <button type="button" class="btn btn-info" style="font-size: small;" (click)="filter('progress')">Progress</button>
+            <button type="button" class="btn btn-warning" style="font-size: small;" (click)="filter('unaccessed')">Unaccessed</button>
+            <button type="button" class="btn btn-success" style="font-size: small;" (click)="filter('cleared')">Cleared</button>
+            <button type="button" class="btn btn-dark" style="font-size: small;" (click)="filter('parked')">Parked</button>
+        </div>
+    </div>
+    <!--    <div class="mb-3 col-lg-3">
+        <input class="form-control" type="text" name="search"   placeholder="&#61442;" [(ngModel)]="searchfilter">
+    </div>        -->
+
+    <div class="input-group mb-3"> 
+        <input type="text" class="form-control" [(ngModel)]="searchfilter" placeholder="Search">
+        <div class="input-group-append">
+            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+</div> 
+<!-- end row-->
+
+<div class="row">
+
+    <div class="card" style="width: 18rem;" *ngFor ="let fault of filterfaults | filter:searchfilter| paginate: { itemsPerPage: 20, currentPage: page, totalItems:totalLength};let i = index">
+        <div class="card-body">
+            <div class="dropdown card-widgets">
+                <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="dripicons-dots-3"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <!-- items-->
+                    <a href="javascript:void(0);" class="dropdown-item" (click)="editModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>Edit</a>
+                    <a href="javascript:void(0);" class="dropdown-item" (click)="assessmentModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>Assessment</a>
+                    <a href="javascript:void(0);" class="dropdown-item" (click)="assignTechModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>assign technician</a>
+                    <a href="javascript:void(0);" class="dropdown-item" (click)="assessmentChecklist(fault)"><i class="mdi mdi-exit-to-app me-1"></i>assesment checklist</a>
+                    <a href="javascript:void(0);" class="dropdown-item" (click)="requestMaterialModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>request material</a>
+                    <a href="javascript:void(0);" class="dropdown-item" (click)="requestPermitModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>request permit</a>
+                    <a href="javascript:void(0);" class="dropdown-item" (click)="parkModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>Park</a>
+                    <a href="javascript:void(0);" class="dropdown-item" (click)="viewModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>View</a>
+                </div>
+            </div>             
+  
+            <h4 class="mt-0">
+                <a class="text-title">{{ fault.customerName}}</a>
+            </h4>
+             <div class="badge bg-success mb-3" style="float: right;">{{fault.status}}</div> <br>
+
+             <div class="card-text font-17 mb-3"> 
+            <p>{{fault.linkName}} </p>            
+             </div>
+
+            <div class="card-text font-17 mb-3">
+                <p>{{fault.accManager}}</p>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item p-3">
+                    <!--  progress bar-->
+                    <p class="mb-2 fw-bold">Progress <span class="float-end">100%</span></p>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                        </div><!-- /.progress-bar -->
+                    </div><!-- /.progress -->
+                </li>
+            </ul>
+        </div>
+        <div class="card-footer">
+            <span style="font-size: smaller;">{{i+1}}</span>
+        </div>
+      </div>
+    
+    <div class="card-footer text-end pb-0 pt-3">
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    </div>
+</div>
+<!-- end row-->
+

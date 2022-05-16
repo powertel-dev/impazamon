@@ -1,0 +1,22 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title w-100 text-center" id="scrollableModalTitle">Request To Park</h4>
+        <button type="button" class="btn-close" (click)="activeModal.dismiss('Cross click')" aria-hidden="true"></button>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal">
+            <div class="row mb-4">
+                <label for="customerName" class="col-4 col-form-label">Reason To Park:</label>
+                <div class="col">
+                    <textarea class="form-control" name="" id=""></textarea>
+                </div>
+            </div>
+
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-danger" (click)="activeModal.close('Cancel')">Cancel</button>            
+                <button type="button" class="btn btn-success">Clear</button>
+            </div>
+        </form>                                 
+    </div>
+
+</div><!-- /.modal-content -->

@@ -1,0 +1,96 @@
+
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title" id="scrollableModalTitle">new fault</h4>
+        <button type="button" class="btn-close" (click)="activeModal.dismiss('Cross click')" aria-hidden="true"></button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col field-box wow fadeInUp">
+                <div class="row">
+                    <div class="col-md-6">
+                        <fieldset class="fieldset border p-2">
+                            <legend class="w-auto px-2">Fault Details</legend>
+                                <div class=" py-3 my-3 px-4">
+                                    <dl class="row">
+                                        <dt class="col-md-6">CUSTOMER NAME</dt>
+                                        <dd class="col-md-6">{{faultSelected.customerName}}</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">Last name</dt>
+                                        <dd class="col-sm-7 col-xl-8">Jatakalula</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">Date of birth</dt>
+                                        <dd class="col-sm-7 col-xl-8">26-07-1999</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">Gender</dt>
+                                        <dd class="col-sm-7 col-xl-8">Man</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">Country based</dt>
+                                        <dd class="col-sm-7 col-xl-8">Zimbabwe</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">Language</dt>
+                                        <dd class="col-sm-7 col-xl-8">English</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">Mobile number </dt>
+                                        <dd class="col-sm-7 col-xl-8">+263786955664</dd>
+                                    </dl>
+                                </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset class="fieldset border p-2">
+                            <legend class="w-auto px-2">Fault Details</legend>
+                                <div class=" py-3 my-3 px-4">
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">FAULT ID:</dt>
+                                        <dd class="col-sm-7 col-xl-8">{{faultSelected.id}}</dd>
+                                        <dt class="col-sm-5 col-xl-4">Last name</dt>
+                                        <dd class="col-sm-7 col-xl-8">Jatakalula</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">Last name</dt>
+                                        <dd class="col-sm-7 col-xl-8">Jatakalula</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">Date of birth</dt>
+                                        <dd class="col-sm-7 col-xl-8">26-07-1999</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">Gender</dt>
+                                        <dd class="col-sm-7 col-xl-8">Man</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">Country based</dt>
+                                        <dd class="col-sm-7 col-xl-8">Zimbabwe</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">Language</dt>
+                                        <dd class="col-sm-7 col-xl-8">English</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-5 col-xl-4">Mobile number </dt>
+                                        <dd class="col-sm-7 col-xl-8">+263786955664</dd>
+                                    </dl>
+                                </div>
+                        </fieldset>
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+    </div>
+
+</div>
+
+
+
+

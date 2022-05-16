@@ -1,0 +1,11 @@
+.checklist {
+  padding: 20px;
+}
+
+.checklist div {
+  float: right;
+}
+
+input[type="range"] {
+  width: 30px;
+}

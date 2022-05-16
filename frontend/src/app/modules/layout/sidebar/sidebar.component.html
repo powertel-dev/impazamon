@@ -1,0 +1,141 @@
+<div class="leftside-menu">
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo text-center logo-dark">
+        <span class="logo-lg">
+            <img src="assets/images/logo.png" alt="" height="30">
+        </span>
+        <span class="logo-sm">
+            <img src="assets/images/logo_sm.png" alt="" height="27">
+        </span>
+    </a>
+
+    <div class="h-100" id="leftside-menu-container" data-simplebar>
+
+        <!--- Sidemenu -->
+        <ul class="side-nav">
+
+            <li class="side-nav-title side-nav-item">Main</li>
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse"  href="#sidebarDashboard" aria-expanded="false" aria-controls="sidebarDashboard" class="side-nav-link" >
+                    <i class="fa fa-dashboard"></i>
+                    <span> Dashboard</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarDashboard">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a class="collapsed" routerLink="./noc" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                <span>NOC</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" >
+                                <li><a routerLink="./assess-faults">ASSESS FAULTS</a></li>
+                                <li><a routerLink="./noc-faults">MY FAULTS</a></li>
+                                <li><a routerLink="./noc-department">NOC FAULTS</a></li>
+                                <li><a routerLink="./assigned-faults">ASSIGNED FAULTS</a></li>
+                                <li><a routerLink="./request-to-park">PARK FAULTS</a></li>
+                                <li><a routerLink="./request-permit">PERMITS</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                           <a routerLink="./chief-tech">Chief Tech</a>
+                        </li>
+                        <li>
+                            <a  routerLink="technician">Technician</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-title side-nav-item">Modules</li>
+
+            <li class="side-nav-item">
+                <a class="side-nav-link" routerLink="./faults">
+                    <i class="fas fa-viruses"></i>
+                    <span> Faults </span>
+                </a>
+            </li>
+
+            <li class="side-nav-item">
+                <a href="#" class="side-nav-link" routerLink="./permits">
+                    <i class="fas fa-laptop-house"></i>
+                    <span> Permits</span>
+                </a>
+            </li>
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarMaterials" aria-expanded="false" aria-controls="sidebarMaterials" class="side-nav-link">
+                    <i class="fas fa-tools"></i>
+                    <span> Materials </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarMaterials">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="#">Request</a>
+                        </li>
+                        <li>
+                            <a href="#">Reports</a>
+                        </li>
+                        <li>
+                            <a href="#">View Reports</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" aria-expanded="false" aria-controls="sidebarPerfomance" class="side-nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    <span> Perfomance</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarPerfomance">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="#">Department</a>
+                        </li>
+                        <li>
+                            <a href="#">Actor</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarSupport" aria-expanded="false" aria-controls="sidebarSupport" class="side-nav-link">
+                    <i class="fa fa-briefcase"></i>
+                    <span> Support </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarSupport">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="#">HR</a>
+                        </li>
+                        <li>
+                            <a href="#">Finance</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="side-nav-item">
+                <a href="#" class="side-nav-link">
+                    <i class="fa fa-folder"></i>
+                    <span> Reports </span>
+                </a>
+            </li>
+
+        </ul>
+
+        <!-- End Sidebar -->
+    </div>
+    <!-- Sidebar -left -->
+
+</div>
+

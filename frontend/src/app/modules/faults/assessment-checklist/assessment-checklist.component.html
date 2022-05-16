@@ -1,0 +1,81 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title w-100 text-center" id="scrollableModalTitle">Assessment Checklist</h4>
+        <button type="button" class="btn-close" (click)="activeModal.dismiss('Cross click')" aria-hidden="true"></button>
+    </div>
+
+    <div class="modal-body">
+        <form>
+            <div class="row">
+                <div class="checklist">
+                    <label  for="choice">1. &#160; Is Power Connected: </label>                    
+                    <div>
+                        <span aria-hidden="true">No</span>
+                        <input type="range" max="1" id="choice" name="choice">
+                        <span aria-hidden="true">Yes</span>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="checklist">
+                    <label  for="choice">2. &#160;&#160; Is Patch Cord Connected: </label> 
+                    <div>
+                        <span aria-hidden="true" >No</span>
+                        <input type="range" max="1" id="choice" name="choice">
+                        <span aria-hidden="true">Yes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="checklist">
+                    <label  for="choice">3. &#160;&#160; Is UTP cable Connected: </label>                     
+                    <div>
+                        <span aria-hidden="true">No</span>
+                        <input type="range" max="1" id="choice" name="choice">
+                        <span aria-hidden="true">Yes</span>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="checklist">
+                    <label  for="choice">4. &#160;&#160; Is Convertor working: </label>                    
+                    <div>
+                        <span aria-hidden="true">No</span>
+                        <input type="range" max="1" id="choice" name="choice">
+                        <span aria-hidden="true">Yes</span>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="checklist">
+                    <label  for="choice">4. &#160;&#160; Is Convertor working: </label>                   
+                    <div>
+                        <span aria-hidden="true">No</span>
+                        <input type="range" max="1" id="choice" name="choice">
+                        <span aria-hidden="true">Yes</span>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="checklist">
+                    <label  for="choice">5. &#160;&#160; Is Fibre broken: </label>                  
+                    <div>
+                        <span aria-hidden="true">No</span>
+                        <input type="range" max="1" id="choice" name="choice">
+                        <span aria-hidden="true">Yes</span>                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-danger" (click)="activeModal.close('Cancel')">Cancel</button>            
+                <button type="button" class="btn btn-success">Submit</button>
+            </div>
+        </form>                          
+    </div>
+</div><!-- /.modal-content -->

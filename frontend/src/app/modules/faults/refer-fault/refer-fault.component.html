@@ -1,0 +1,50 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title w-100 text-center" id="scrollableModalTitle">Refer</h4>
+        <button type="button" class="btn-close" (click)="activeModal.dismiss('Cross click')" aria-hidden="true"></button>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal">
+            <div class="row mb-4">
+                <label for="customerName" class="col-4 col-form-label">Customer Name:</label>
+                <div class="col">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-4">
+                <label for="location" class="col-4 col-form-label">Fault Locale:</label>
+                <div class="col">
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-4">
+                <label for="technician" class="col-4 col-form-label">Refer To:</label>
+                <div class="col">
+                    <select  class="form-select">
+                        <option>Select</option>
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>Normal</option>
+                        <option>High</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="suburb" class="col-4 col-form-label">Suburb:</label>
+                <div class="col">
+                     <textarea class="form-control" id="" ></textarea>
+                </div>
+
+            </div>
+
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-danger" (click)="activeModal.close('Cancel')">Cancel</button>            
+                <button type="button" class="btn btn-success">Refer</button>
+            </div>
+        </form>                                 
+    </div>
+
+</div><!-- /.modal-content -->
+
+
+

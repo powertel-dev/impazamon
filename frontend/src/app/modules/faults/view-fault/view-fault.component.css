@@ -1,0 +1,31 @@
+/***** Form 2 *****/
+
+.field-box {
+  padding-top: 30px;
+  text-align: left;
+}
+
+.field-box legend {
+  font-size: inherit;
+  line-height: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: blue;
+}
+
+.fieldset {
+  margin-bottom: 12px;
+}
+
+dt,
+dd {
+  display: inline-block;
+  margin: 0;
+  padding: 5px;
+}
+dt {
+  font-weight: bold;
+}
+dt:after {
+  content: ":";
+}

@@ -1,0 +1,484 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fname": "Africa",
+      "surname": "Jatakalula",
+      "username": "admin",
+      "password": "admin"
+    }
+  ],
+  "faults": [
+    {
+      "customerName": "OK",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": "Dangwa",
+      "serviceType": "INTERNET",
+      "city": "Harare",
+      "suburb": "Kuwadzana",
+      "pop": " ",
+      "linkName": "OK-Sang-OkHQ",
+      "suspectedRfo": "No fx Light",
+      "serviceAttr": "VPN",
+      "remarks": " ",
+      "status": "unaccessed",
+      "id": 1
+    },
+    {
+      "customerName": "ZB Bank",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Freeom",
+      "serviceType": "VPN",
+      "city": "Bulawayo",
+      "suburb": "Nkulumane",
+      "pop": "pop",
+      "linkName": "ZB-Sang-OkHQ",
+      "suspectedRfo": "No fx Light",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "cleared",
+      "id": 2
+    },
+    {
+      "customerName": "ZB Bank",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Hotera",
+      "serviceType": " ",
+      "city": "Harare",
+      "suburb": "CBD",
+      "pop": "pop",
+      "linkName": "ZB-Sang-OkHQ",
+      "suspectedRfo": "No PON Light",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "",
+      "id": 3
+    },
+    {
+      "customerName": "ZB Bank",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Africa",
+      "serviceType": "VPN",
+      "city": "Harare",
+      "suburb": "CBD",
+      "pop": "pop",
+      "linkName": "ZB-Sang-OkHQ",
+      "suspectedRfo": " ",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "",
+      "id": 4
+    },
+    {
+      "customerName": "OK",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Flpo",
+      "serviceType": " ",
+      "city": "Harare",
+      "suburb": "Kuwadzana",
+      "pop": "pop",
+      "linkName": "OK-Sang-OkHQ",
+      "suspectedRfo": "BTS Down",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "",
+      "id": 5
+    },
+    {
+      "customerName": "OK",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": "Dangwa",
+      "serviceType": "INTERNET",
+      "city": "Harare",
+      "suburb": "Kuwadzana",
+      "pop": " ",
+      "linkName": "OK-Sang-OkHQ",
+      "suspectedRfo": "No fx Light",
+      "serviceAttr": "VPN",
+      "remarks": " ",
+      "status": "unaccessed",
+      "id": 1
+    },
+    {
+      "customerName": "ZB Bank",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Freeom",
+      "serviceType": "VPN",
+      "city": "Bulawayo",
+      "suburb": "Nkulumane",
+      "pop": "pop",
+      "linkName": "ZB-Sang-OkHQ",
+      "suspectedRfo": "No fx Light",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "cleared",
+      "id": 2
+    },
+    {
+      "customerName": "ZB Bank",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Hotera",
+      "serviceType": " ",
+      "city": "Harare",
+      "suburb": "CBD",
+      "pop": "pop",
+      "linkName": "ZB-Sang-OkHQ",
+      "suspectedRfo": "No PON Light",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "",
+      "id": 3
+    },
+    {
+      "customerName": "ZB Bank",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Africa",
+      "serviceType": "VPN",
+      "city": "Harare",
+      "suburb": "CBD",
+      "pop": "pop",
+      "linkName": "ZB-Sang-OkHQ",
+      "suspectedRfo": " ",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "",
+      "id": 4
+    },
+    {
+      "customerName": "OK",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Flpo",
+      "serviceType": " ",
+      "city": "Harare",
+      "suburb": "Kuwadzana",
+      "pop": "pop",
+      "linkName": "OK-Sang-OkHQ",
+      "suspectedRfo": "BTS Down",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "",
+      "id": 5
+    },
+    {
+      "customerName": "OK",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": "Dangwa",
+      "serviceType": "INTERNET",
+      "city": "Harare",
+      "suburb": "Kuwadzana",
+      "pop": " ",
+      "linkName": "OK-Sang-OkHQ",
+      "suspectedRfo": "No fx Light",
+      "serviceAttr": "VPN",
+      "remarks": " ",
+      "status": "unaccessed",
+      "id": 1
+    },
+    {
+      "customerName": "ZB Bank",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Freeom",
+      "serviceType": "VPN",
+      "city": "Bulawayo",
+      "suburb": "Nkulumane",
+      "pop": "pop",
+      "linkName": "ZB-Sang-OkHQ",
+      "suspectedRfo": "No fx Light",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "cleared",
+      "id": 2
+    },
+    {
+      "customerName": "ZB Bank",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Hotera",
+      "serviceType": " ",
+      "city": "Harare",
+      "suburb": "CBD",
+      "pop": "pop",
+      "linkName": "ZB-Sang-OkHQ",
+      "suspectedRfo": "No PON Light",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "",
+      "id": 3
+    },
+    {
+      "customerName": "ZB Bank",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Africa",
+      "serviceType": "VPN",
+      "city": "Harare",
+      "suburb": "CBD",
+      "pop": "pop",
+      "linkName": "ZB-Sang-OkHQ",
+      "suspectedRfo": " ",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "",
+      "id": 4
+    },
+    {
+      "customerName": "OK",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Flpo",
+      "serviceType": " ",
+      "city": "Harare",
+      "suburb": "Kuwadzana",
+      "pop": "pop",
+      "linkName": "OK-Sang-OkHQ",
+      "suspectedRfo": "BTS Down",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "",
+      "id": 5
+    },
+    {
+      "customerName": "OK",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": "Dangwa",
+      "serviceType": "INTERNET",
+      "city": "Harare",
+      "suburb": "Kuwadzana",
+      "pop": " ",
+      "linkName": "OK-Sang-OkHQ",
+      "suspectedRfo": "No fx Light",
+      "serviceAttr": "VPN",
+      "remarks": " ",
+      "status": "unaccessed",
+      "id": 1
+    },
+    {
+      "customerName": "ZB Bank",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Freeom",
+      "serviceType": "VPN",
+      "city": "Bulawayo",
+      "suburb": "Nkulumane",
+      "pop": "pop",
+      "linkName": "ZB-Sang-OkHQ",
+      "suspectedRfo": "No fx Light",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "cleared",
+      "id": 2
+    },
+    {
+      "customerName": "ZB Bank",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Hotera",
+      "serviceType": " ",
+      "city": "Harare",
+      "suburb": "CBD",
+      "pop": "pop",
+      "linkName": "ZB-Sang-OkHQ",
+      "suspectedRfo": "No PON Light",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "",
+      "id": 3
+    },
+    {
+      "customerName": "ZB Bank",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Africa",
+      "serviceType": "VPN",
+      "city": "Harare",
+      "suburb": "CBD",
+      "pop": "pop",
+      "linkName": "ZB-Sang-OkHQ",
+      "suspectedRfo": " ",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "",
+      "id": 4
+    },
+    {
+      "customerName": "OK",
+      "contactName": " ",
+      "phone": " ",
+      "email": " ",
+      "address": " ",
+      "accManager": " Flpo",
+      "serviceType": " ",
+      "city": "Harare",
+      "suburb": "Kuwadzana",
+      "pop": "pop",
+      "linkName": "OK-Sang-OkHQ",
+      "suspectedRfo": "BTS Down",
+      "serviceAttr": " ",
+      "remarks": " ",
+      "status": "",
+      "id": 5
+    }
+  ],
+  "cities": [
+    {
+      "city": "Harare",
+      "suburbs": [
+        {
+          "suburb": "CBD",
+          "pops": [
+            "Inter Market",
+            "NSSA"
+          ]
+        },
+        {
+          "suburb": "Kuwadzana",
+          "pops": [
+            "Kuwadzana"
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Bulawayo",
+      "suburbs": [
+        {
+          "suburb": "Town",
+          "pops": [
+            "BC",
+            "Telone"
+          ]
+        },
+        {
+          "suburb": "Nkulumane",
+          "pops": [
+            "Ndaba Road"
+          ]
+        }
+      ]
+    }
+  ],
+  "customers": [
+    {
+      "customerName": "OK",
+      "links": [
+        "OK-Sang-OkHQ",
+        "Ok-Cbd-Okfirst"
+      ]
+    },
+    {
+      "customerName": "ZB Bank",
+      "links": [
+        "ZB-Sang-OkHQ"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "label": "CABLES",
+      "materials": [
+        {
+          "description": "12 Core Fibre cable S/M"
+        },
+        {
+          "description": "24 Core Fibre cable S/M"
+        },
+        {
+          "description": "48 Core Fibre cable S/M"
+        },
+        {
+          "description": "96 Core Fibre cable S/M"
+        }
+      ]
+    },
+    {
+      "label": "POWER",
+      "materials": [
+        {
+          "description": "25A Rectifier 12V"
+        },
+        {
+          "description": "Tester Battry 12V"
+        },
+        {
+          "description": "Charger USB MICRO B"
+        },
+        {
+          "description": "Charger USB TYPE C"
+        }
+      ]
+    },
+    {
+      "label": "FUEL",
+      "materials": [
+        {
+          "description": "Diesel"
+        },
+        {
+          "description": "Petrol"
+        }
+      ]
+    },
+    {
+      "label": "CABLE TIES",
+      "materials": [
+        {
+          "description": "300mm"
+        },
+        {
+          "description": "500mm"
+        }
+      ]
+    }
+  ]
+}

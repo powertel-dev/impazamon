@@ -1,0 +1,67 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title w-100 text-center" id="scrollableModalTitle">Permit To Work</h4>
+        <button type="button" class="btn-close" (click)="activeModal.dismiss('Cross click')" aria-hidden="true"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+
+            <div class="row">
+                <div class="mb-3 col">
+                    <label for="faultNumber" class="form-label">Fault Number</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="mb-3 col">
+                    <label for="ptwNumber" class="form-label">PTW Number</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="mb-3 col">
+                    <label for="crNumnber" class="form-label">CR Number</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="mb-3 col">
+                    <label for="dateIssue" class="form-label">Date of Issue</label>
+                    <input type="text" class="form-control">
+                </div>
+        
+                <div class="mb-3 col">
+                    <label for="startTime" class="form-label">Start TIme</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="mb-3 col">
+                    <label for="endTime" class="form-label">End Time</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col">
+                    <label for="issuedTo" class="form-label">Requested By</label>
+                    <select  class="form-select">
+                        <option>Select</option>
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>Normal</option>
+                        <option>High</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col">
+                    <label  class="form-label">Description</label>
+                    <textarea  class="form-control"  formControlName="intakeRemarks"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <button type="button" class="btn btn-danger" (click)="activeModal.close('Cancel')">Cancel</button>            
+                <button type="button" class="btn btn-success">Request</button>
+            </div>
+        </form>                          
+    </div>
+</div><!-- /.modal-content -->
