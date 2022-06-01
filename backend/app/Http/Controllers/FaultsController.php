@@ -63,35 +63,4 @@ class FaultsController extends Controller
         ],200);
     }
 
-    /********if(Fault::where('id',$id)->exists())
-        {
-            $fault = Fault::find($id);
-            $fault->customerName = $request ->customerName;
-            $fault->contactName = $request ->contactName;
-            $fault->phoneNumber = $request -> phoneNumber;
-            $fault->contactEmail = $request -> contactEmail;
-            $fault->address = $request -> address;
-            $fault->accountManager = $request -> accountManager;
-            $fault->city = $request -> city;
-            $fault->suburb = $request -> suburb;
-            $fault->pop = $request -> pop;
-            $fault->linkName = $request -> linkName;
-            $fault->suspectedRfo = $request -> suspectedRfo;
-            $fault->serviceAttribute = $request -> serviceAttribute;
-            $fault->remarks = $request -> remarks;
-            $fault-> status = $request ->  status;
-
-            $fault->save();
-            return response()->json([
-                "message" => "record updated successfully"
-            ],200);
-        }
-        else
-        {
-            return response()->json([
-                "message" => "fault not found"
-            ],404);
-        } */
-
-
 }

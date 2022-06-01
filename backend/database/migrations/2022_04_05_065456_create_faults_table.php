@@ -33,7 +33,7 @@ class CreateFaultsTable extends Migration
             $table->string('assigned_department')->nullable();
             $table->string('created_by')->nullable();
             $table->integer('status_id')->nullable();
-            $table->string('remarks');
+            $table->string('remarks')->nullable();
             $table->string('assessRemarks')->nullable();
             $table->string('status');
             $table->timestamps();

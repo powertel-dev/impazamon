@@ -33,14 +33,14 @@ const routes: Routes = [
         children:[
           {path:'view/:faultId', component: ViewFaultComponent,
           children:[
-            {path:'remarks', component: RemarksComponent}
+            {path:'remarks/:faultId', component: RemarksComponent}
           ]},
         ]},
         {path:'noc-myfaults',component: NocFaultsComponent,
         children:[
           {path:'view/:faultId', component: ViewFaultComponent,
           children:[
-            {path:'remarks', component: RemarksComponent}
+            {path:'remarks/:faultId', component: RemarksComponent}
           ]},
           {path:'refer/:faultId',component:ReferFaultComponent},
           {path:'clear/:faultId',component:ClearFaultComponent},
@@ -49,7 +49,7 @@ const routes: Routes = [
         children:[
           {path:'view/:faultId', component: ViewFaultComponent,
           children:[
-            {path:'remarks', component: RemarksComponent}
+            {path:'remarks/:faultId', component: RemarksComponent}
           ]},
         ]},
         {path:'assigned-faults', component:AssignedFaultComponent},
@@ -59,7 +59,7 @@ const routes: Routes = [
         children:[
           {path:'view/:faultId', component: ViewFaultComponent,
           children:[
-            {path:'remarks', component: RemarksComponent}
+            {path:'remarks/:faultId', component: RemarksComponent}
           ]},
           {path:'assess/:faultId', component: AssessmentFaultComponent},
         ]},
@@ -70,11 +70,12 @@ const routes: Routes = [
         /***Faults Routes Component */
         {path:'faults', component: FaultsComponent,
         children:[
+          {path:'remarks', component: RemarksComponent},
           {path:'create', component: FaultIntakeComponent},
           {path:'edit/:faultId', component:EditFaultComponent},
           {path:'view/:faultId', component: ViewFaultComponent,
           children:[
-            {path:'remarks', component: RemarksComponent}
+            {path:'remarks/:faultId', component: RemarksComponent}
           ]},
           {path:'assess/:faultId', component: AssessmentFaultComponent},
         ]},
@@ -82,7 +83,7 @@ const routes: Routes = [
         children:[
           {path:'view/:faultId', component: ViewFaultComponent,
           children:[
-            {path:'remarks', component: RemarksComponent}
+            {path:'remarks/:faultId', component: RemarksComponent}
           ]},
           {path:'assess/:faultId', component: AssessmentFaultComponent},
         ]},

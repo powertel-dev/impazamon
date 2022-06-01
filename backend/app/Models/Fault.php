@@ -75,4 +75,14 @@ class Fault extends Model implements JWTSubject
     {
         return $this ->belongsTo(Department::class);
     }
+
+    public function remarks()
+    {
+        return $this ->hasMany(Remark::class);
+    }
+
+    public function technician()
+    {
+        return $this -> hasOne(Technician::class);
+    }
 }

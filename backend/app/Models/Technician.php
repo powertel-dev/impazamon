@@ -13,4 +13,9 @@ class Technician extends Model
     {
         return $this->belongsTo(Department::class);
     }
+
+    public function fault()
+    {
+        return $this->hasOne(Fault::class);
+    }
 }

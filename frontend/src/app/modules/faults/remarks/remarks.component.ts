@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FaultsService } from 'src/app/services/faults.service';
 import { Location } from "@angular/common"
+import { Faults } from 'src/app/models/faults';
 
 @Component({
   selector: 'app-remarks',
@@ -12,10 +13,18 @@ export class RemarksComponent implements OnInit {
 
   showModal = false;
 
+  faultId:any;
+  data:any;
+  fault = new Faults();
+
   constructor(private route: ActivatedRoute, private api: FaultsService, private router: Router,private location: Location) { }
 
   ngOnInit(): void {
     this.showModal = true;
+
+    this.faultId = this.route.snapshot.params['faultId'];
+    console.log(this.faultId);
+    this.getData();
   }
 
     //////////for closing routing modal
@@ -32,5 +41,13 @@ export class RemarksComponent implements OnInit {
     
     }
             //////End routing modal
+
+            getData(){
+              this.api.getFaultById(`fault`,this.faultId).subscribe((res: any)=>{
+                this.data=res;
+                this.fault=this.data;
+                console.log(this.fault);
+              })
+            }
 
 }
