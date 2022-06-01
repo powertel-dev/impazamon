@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from "@angular/common"
 import { Faults } from 'src/app/models/faults';
 import { FaultsService } from 'src/app/services/faults.service';
 
@@ -11,56 +12,44 @@ import { FaultsService } from 'src/app/services/faults.service';
 })
 export class AssessmentFaultComponent implements OnInit {
 
-  assessForm! : FormGroup;
-  selectedFault! : Faults;
-  isLoading!: boolean;
+  /***************this is for routing */
+  showModal = false;
+  faultId:any;
+  data:any;
+  fault = new Faults();
 
 
-  constructor(public activeModal: NgbActiveModal,private formBuilder: FormBuilder,private api: FaultsService) { }
+  constructor(private route: ActivatedRoute, private api: FaultsService, private router: Router,private location: Location) {}
 
   ngOnInit(): void {
-    this.setForm();
+    ///For calling routing modal
+    this.showModal = true;
+
+    this.faultId = this.route.snapshot.params['faultId'];
+    console.log(this.faultId);
+    this.getData();
   }
 
-  onSubmit() {
-    if (this.assessForm.invalid || this.isLoading) {
-      return;
-    }
-    this.isLoading =true;
-    this.api.updateFault(this.assessForm.value).subscribe((res: any) => {
-      this.isLoading = false;
-      this.activeModal.close('Yes');
-    },
-      error => {
-        this.isLoading = false;
-      });
+  //////////for closing routing modal
+  onClose() {
+    this.showModal = false;
+    //Allow fade out animation to play before navigating back
+    this.location.back();
   }
 
-  get editFormData() { return this.assessForm.controls; }
-
-  setForm(){
-    console.log(this.selectedFault);
-
-    this.assessForm = this.formBuilder.group(
-      {
-        id:[this.selectedFault.id],
-        customerName: [this.selectedFault.customerName],
-        contactName:[this.selectedFault.contactName],
-        phone: [this.selectedFault.phoneNumber],
-        email: [this.selectedFault.contactEmail],
-        address: [this.selectedFault.address],
-        accManager: [this.selectedFault.accountManager],
-        serviceType: [this.selectedFault.serviceType],
-        city:[this.selectedFault.city],
-        suburb:[this.selectedFault.suburb],
-        pop: [this.selectedFault.pop],
-        linkName: [this.selectedFault.linkName],
-        suspectedRfo:[this.selectedFault.suspectedRfo],
-        serviceAttr:[this.selectedFault.serviceAttribute],
-        remarks:[this.selectedFault.remarks],
-        status:[this.selectedFault.status]
-      }
-    )
+  onDialogClick(event: UIEvent) {
+    // Capture click on dialog and prevent it from bubbling to the modal background.
+    event.stopPropagation();
+    event.cancelBubble = true;
+  
+  }
+          //////End routing modal
+  getData(){
+    this.api.getFaultById(`fault`,this.faultId).subscribe((res: any)=>{
+      this.data=res;
+      this.fault=this.data;
+      console.log(this.fault);
+    })
   }
 
 }

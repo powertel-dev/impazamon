@@ -32,7 +32,7 @@
                             </a>
                             <ul id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" >
                                 <li><a routerLink="./assess-faults">ASSESS FAULTS</a></li>
-                                <li><a routerLink="./noc-faults">MY FAULTS</a></li>
+                                <li><a routerLink="./noc-myfaults">MY FAULTS</a></li>
                                 <li><a routerLink="./noc-department">NOC FAULTS</a></li>
                                 <li><a routerLink="./assigned-faults">ASSIGNED FAULTS</a></li>
                                 <li><a routerLink="./request-to-park">PARK FAULTS</a></li>
@@ -40,7 +40,15 @@
                             </ul>
                         </li>
                         <li>
-                           <a routerLink="./chief-tech">Chief Tech</a>
+                            <a class="collapsed" routerLink="./chief-tech" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                <span>Chief Tech</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" >
+                                <li><a routerLink="./assigned-faults">ASSIGNED FAULTS</a></li>
+                                <li><a routerLink="./request-to-park">PARK FAULTS</a></li>
+                                <li><a routerLink="./request-permit">PERMITS</a></li>
+                            </ul>
                         </li>
                         <li>
                             <a  routerLink="technician">Technician</a>

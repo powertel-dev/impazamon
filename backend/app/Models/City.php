@@ -17,6 +17,9 @@ class City extends Model
         return $data;
     } 
  */
-
+    public function suburbs()
+    {
+        return $this->hasMany(Suburb::class);
+    }
 
 }

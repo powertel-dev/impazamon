@@ -14,7 +14,7 @@ import { FaultsService } from 'src/app/services/faults.service';
 export class FaultIntakeComponent implements OnInit {
 
 
-
+  /***************this is for routing */
   showModal = false;
 
   faultForm! : FormGroup;
@@ -60,25 +60,10 @@ export class FaultIntakeComponent implements OnInit {
   console.log(this.getCity());
   console.log(this.getCustomer())
 
+    ///For calling routing modal
   this.showModal = true;
 
 }
-
-onSub(){
-
-  this.api.post(this.faultForm).subscribe(
-    data => this.handleResponse(data),
-
-  );
-}
-
-handleResponse(data:any){
-
-  this.apiService.handle(data.access_token);
-  this.router.navigate(['/faults']);
-
-}
-
 
 onSubmit() {
   this.submitted = true;
@@ -112,9 +97,10 @@ onSubmit() {
     }
 
     this.isLoading = true;
-    this.api.postFaults('create', this.faultForm.value).subscribe(
+    this.api.addFault('create', this.faultForm.value).subscribe(
       (res) => {
         this.isLoading = false;
+        this.onClose();
       },
       (error) => {
         this.isLoading = false;
@@ -122,6 +108,7 @@ onSubmit() {
     );
   }
 
+  //////////for closing routing modal
   onClose() {
     this.showModal = false;
     //Allow fade out animation to play before navigating back
@@ -135,7 +122,10 @@ onSubmit() {
     // Capture click on dialog and prevent it from bubbling to the modal background.
     event.stopPropagation();
     event.cancelBubble = true;
+  
   }
+
+  //////End routing modal
 
   get f(): { [key: string]: AbstractControl } {
     return this.faultForm.controls;

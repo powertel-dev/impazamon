@@ -33,7 +33,8 @@ Route::group([
     Route::get('user-profile',[AuthController::class,'userProfile']);
     Route::post('create',[FaultsController::class,'createfault']);
     Route::get('getfaults',[FaultsController::class,'getfaults']);
-    Route::post('creates',[FaultsController::class,'add']);
+    Route::get('fault/{id}',[FaultsController::class,'getfault']);
+    Route::put('fault/{id}',[FaultsController::class,'update']);
 
     
     Route::get('city',[DropdownController::class,'getCityList']);

@@ -2,3 +2,151 @@
               "node_modules/datatables.net/js/jquery.dataTables.min.js",
               "node_modules/datatables.net-dt/js/dataTables.dataTables.js",
               "node_modules/datatables.net-dt/js/dataTables.dataTables.min.js",
+
+
+              fault intake
+
+              
+    <div id="backdrop" class="modal-backdrop fade" [ngClass]="{ show: showModal }"></div>
+    <div class="modal d-block fade" 
+      [ngClass]="{ show: showModal }"
+      (click)="onClose()">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>I was loaded via route</h5>
+                    <button type="button" (click)="onClose()"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="faultForm"  (ngSubmit)="onSubmit()">
+                        <div class="row g-2">
+                            <div class="mb-3 col-md-6">
+                                <label for="customerName" class="form-label">Customer Name </label>
+                                <select class="form-select"formControlName="customerName" (change)="getLink($event)">
+                                    <option value="0" >Select Customer Name</option>
+                                    <option *ngFor="let customer of customers" value="{{customer.id}}" >{{customer.customerName}}</option>
+                                </select>  
+              
+                            </div>
+            
+                            <div class="mb-3 col-md-6">
+                                <label for="serviceType" class="form-label">Service Type</label>
+                                <select type="text"  class="form-select" formControlName="serviceType">
+                                    <option selected>Choose</option>
+                                    <option>VOIP</option>
+                                    <option>VPN</option>
+                                    <option>INTERNET</option>
+                                    <option>CARRIER SERVICE</option>
+                                    <option>POWERTRACK</option>
+                                    <option>CDMA VOICE</option>
+                                    <option>CDMA VOICE</option>
+                                    <option>E-VENDING</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <div class="row g-2">
+                            <div class="mb-3 col-md-6">
+                                <label for="contactName" class="form-label">Contact Name</label>
+                                <input type="text" class="form-control"  placeholder="Contact Name" formControlName="contactName">
+                            </div>
+                            <div class="mb-3 col-md-2">
+                                <label for="city" class="form-label">Fault Locale</label>
+                                <select  class="form-select" formControlName="city" [(ngModel)]="fault.city"  (change)="getSuburb($event)">   <!--(ngModelChange)="selectedCity.id" (change)="changeCity($event.target)"-->
+                                    <option value="0" >Select City/Town</option>
+                                    <option *ngFor="let c of cities" value="{{c.id}}">{{c.city}}</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 col-md-2">
+                                <label for="suburb" class="form-label">Suburb</label>
+                                <select  class="form-select" formControlName="suburb"[(ngModel)]="fault.suburb" (change)="getPop($event)">   <!--(change)="changeSuburb($event.target)" -->
+                                    <option>Select Suburb</option>
+                                    <option *ngFor="let s of suburbs" value="{{s.id}}" >{{s.suburb}}</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 col-md-2">
+                                <label for="pop" class="form-label">POP</label>
+                                <select  class="form-select" formControlName="pop" [(ngModel)]="fault.pop">
+                                    <option>Select Pop</option>
+                                    <option *ngFor="let p of pops" value="pop" >{{p.pop}}</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <div class="row g-2">
+                            <div class="mb-3 col-md-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="text" class="form-control"  placeholder="Phone Number" formControlName="phoneNumber">
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="linkName" class="form-label">Link Name</label>
+                                <select class="form-select" formControlName="linkName">
+                                    <option>select link</option>
+                                    <option *ngFor="let link of links">{{link.linkName}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="mb-3 col-md-6">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" placeholder="email" formControlName="contactEmail">
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="suspectedRfo" class="form-label">Suspected Reason For Outage</label>
+                                <select id="suspectedRfo" class="form-select" formControlName="suspectedRfo">
+                                    <option>Choose</option>
+                                    <option>No fx Light</option>
+                                    <option>No PON Light</option>
+                                    <option>BTS Down</option>
+                                    <option>Node Down</option>
+                                    <option>Unknown</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <div class="row g-2">
+                            <div class="mb-3 col-md-6">
+                                <label for="adress" class="form-label">Address</label>
+                                <input type="text" class="form-control"  placeholder="Address" formControlName="address">
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="serviceAtrr" class="form-label">Service Attribute</label>
+                                <select  class="form-select" formControlName="serviceAttribute" placeholder="service attribute">
+                                    <option>Port</option>
+                                    <option>VPN</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <div class="row g-2">
+                            <div class="mb-3 col-md-6">
+                                <label for="accManager" class="form-label">Account Manager</label>
+                                <input type="text" class="form-control"  placeholder="Address" formControlName="accountManager">
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="status" class="form-label">Status</label>
+                                <select  class="form-select" formControlName="status" placeholder="status">
+                                    <option>new fault</option>
+                                    <option>unaccessed</option>
+                                    <option>cleared</option>
+                                    <option>parked</option>
+                                    <option>finished</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <div class="mb-3 col-md-6">
+                            <label for="remarks" class="form-label">Remarks</label>
+                            <textarea name="remarks" class="form-control" placeholder="Enter any additional comments" formControlName="remarks" ></textarea>
+                        </div>
+                        <p>
+                        </p>
+                    </form>                                   
+                
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>

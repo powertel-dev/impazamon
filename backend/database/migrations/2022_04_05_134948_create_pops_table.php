@@ -14,10 +14,13 @@ class CreatePopsTable extends Migration
     public function up()
     {
         Schema::create('pops', function (Blueprint $table) {
-            $table->id();
-            $table->integer('suburb_id');
+            $table->increments('id');
+            $table->unsignedInteger('suburb_id');
             $table->string('pop');
             $table->timestamps();
+            $table->foreign('suburb_id')
+                    ->references('id')
+                    ->on('suburbs');
         });
     }
 

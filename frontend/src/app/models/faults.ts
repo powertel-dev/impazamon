@@ -7,6 +7,7 @@ export class Faults {
     "address": string;
     "accountManager": string;
     "serviceType": string;
+    "faultType": string;
     "city":string;
     "suburb":string;
     "pop": string;
@@ -14,5 +15,8 @@ export class Faults {
     "suspectedRfo":string;
     "serviceAttribute":string;
     "remarks":string;
+    "assessRemarks":string;
+    "priorityLevel":string;
+    "department":string;
     "status":string;
 }

@@ -1,9 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Location } from "@angular/common"
 import { Faults } from 'src/app/models/faults';
-import { DataService } from 'src/app/services/data.service';
 import { FaultsService } from 'src/app/services/faults.service';
 
 @Component({
@@ -13,84 +11,51 @@ import { FaultsService } from 'src/app/services/faults.service';
 })
 export class EditFaultComponent implements OnInit {
 
-  @Input() src: any;
+  /***************this is for routing */
+  showModal = false;
+
+  faultId:any;
+  data:any;
+  fault = new Faults();
   
-  editForm! : FormGroup;
-  selectedFault! : Faults;
-  isLoading!: boolean;
-  cities: Array<any> = []; 
-  suburbs: Array<any> = []; 
-  pops: Array<any> = []; 
-  selectedCity: String =" --Choose City--";
-
-
-  constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder,private route: ActivatedRoute, private api: FaultsService, private router: Router, private data: DataService) {}
+  constructor( private route: ActivatedRoute, private api: FaultsService, private router: Router,private location: Location) {}
   
   ngOnInit() {  
-    this.setForm();
+    ///For calling routing modal
+    this.showModal = true;
+
+    this.faultId = this.route.snapshot.params['faultId'];
+    console.log(this.faultId);
+    this.getData();
+
   }
 
-  onSubmit() {
-    if (this.editForm.invalid || this.isLoading) {
-      return;
-    }
-    this.isLoading =true;
-    this.api.updateFault(this.editForm.value).subscribe(res => {
-      this.isLoading = false;
-      this.activeModal.close('Yes');
-    },
-      error => {
-        this.isLoading = false;
-      });
+  //////////for closing routing modal
+  onClose() {
+    this.showModal = false;
+    //Allow fade out animation to play before navigating back
+    this.location.back();
   }
+
+  onDialogClick(event: UIEvent) {
+    // Capture click on dialog and prevent it from bubbling to the modal background.
+    event.stopPropagation();
+    event.cancelBubble = true;
   
-  get editFormData() { return this.editForm.controls; }
-
-  setForm(){
-    console.log(this.selectedFault);
-
-    this.editForm = this.formBuilder.group(
-      {
-        id:[this.selectedFault.id],
-        customerName: [this.selectedFault.customerName],
-        contactName:[this.selectedFault.contactName],
-        phone: [this.selectedFault.phoneNumber],
-        email: [this.selectedFault.contactEmail],
-        address: [this.selectedFault.address],
-        accManager: [this.selectedFault.accountManager],
-        serviceType: [this.selectedFault.serviceType],
-        city:[this.selectedFault.city],
-        suburb:[this.selectedFault.suburb],
-        pop: [this.selectedFault.pop],
-        linkName: [this.selectedFault.linkName],
-        suspectedRfo:[this.selectedFault.suspectedRfo],
-        serviceAttr:[this.selectedFault.serviceAttribute],
-        remarks:[this.selectedFault.remarks],
-        status:[this.selectedFault.status]
-      }
-    )
-    this.showAll();
   }
-
-  showAll(){
-    this.data.getAll('cities').subscribe((data: any)=>{
-      this.cities = data;
-      console.log(this.cities)
-    })
-  } 
-
-  changeCity(city:any){
-    this.data.getAll('cities').subscribe((res:any)=>{
-      this.suburbs = res.find((res:any)=> res.city == city.target.value).suburbs;
-      console.log(this.suburbs)
+          //////End routing modal
+  
+  getData(){
+    this.api.getFaultById(`fault`,this.faultId).subscribe((res: any)=>{
+      this.data=res;
+      this.fault=this.data;
+      console.log(this.fault);
     })
   }
 
-  changeSuburb(suburb:any){
-    this.data.getAll('cities').subscribe((res:any)=>{
-      this.pops = res.find((res:any)=> res.city == this.selectedCity).suburbs.find((result:any) => 
-      result.suburb == suburb.target.value).pops;
-      console.log(this.pops)
+  updateFault(){
+    this.api.updateFault(`fault`,this.faultId,this.fault).subscribe(res=>{
+      this.onClose();
     })
   }
 

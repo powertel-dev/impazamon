@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class pop extends Model
+class Pop extends Model
 {
     use HasFactory;
 
@@ -15,7 +15,10 @@ class pop extends Model
         $data=DB::table('pops')->where('suburb_id',$suburb_id)->get();
         return $data;
     } */
-
+    public function suburb()
+    {
+        return $this->belongsTo(Suburb::class);
+    }
 
 
 }

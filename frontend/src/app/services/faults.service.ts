@@ -21,22 +21,19 @@ export class FaultsService {
     return this.http.get<Faults[]>(`${this.url}/${path}`);
   }
 
-  postFaults(path: string, data: any){
-    return this.http.post<any>(`${this.url}/${path}`, data)
+  addFault(path: string,fault:any){
+    return this.http.post<any>(`${this.url}/${path}`, fault)
     .pipe(map((res) =>{
       return res;
     })) 
   }
 
-    post(data: any){
-      return this.http.post(`${this.url}/create`, data);
-    }
+  getFaultById(path:string, id:number){
+    return this.http.get(`${this.url}/${path}/`+id)
+  }
 
-    updateFault(selectedFault: Faults){
-    return this.http.put(`${this.url}`,selectedFault)
-    .pipe(map((res) =>{
-      return res;
-    }))
-  }     
-   
+  updateFault(path:string, id:number,fault:any){
+    return this.http.put(`${this.url}/${path}/`+id,fault)
+  }
+
 }

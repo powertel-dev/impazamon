@@ -1,33 +1,36 @@
-<div class="modal-content">
-    <div class="modal-header">
-        <h4 class="modal-title w-100 text-center" id="scrollableModalTitle">Clear Fault</h4>
-        <button type="button" class="btn-close" (click)="activeModal.dismiss('Cross click')" aria-hidden="true"></button>
+<div id="backdrop" class="modal-backdrop fade"  data-backdrop="static" data-keyboard="false" [ngClass]="{ show: showModal}"></div>
+<div class="modal d-block fade" 
+    [ngClass]="{ show: showModal }"
+    (click)="onClose()">
+    <div class="modal-dialog" role="document" (click)="onDialogClick($event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="scrollableModalTitle">Clear Fault</h4>
+                <button type="button" class="btn-close"  (click)="onClose()"></button>
+            </div>
+            <div class="modal-body">                                
+                <form class="form-horizontal">
+                    <div class="row mb-4">
+                        <label for="customerName" class="col-4 col-form-label">Customer Name:</label>
+                        <div class="col">
+                            <input type="text" class="form-control" name="customerName" [(ngModel)]="fault.customerName">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <label for="location" class="col-4 col-form-label"></label>
+                        <div class="col form-checkbox-success ">
+                            <input type="checkbox" class="form-check-input" id="customCheckcolor3">&nbsp;
+                            <label class="form-check-label" for="customCheckcolor3">Restored</label>
+                        </div>
+                    </div>
+        
+                    <div class="modal-footer ">
+                        <button type="button" class="btn btn-success">Clear</button>
+                        <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
+                    </div>
+                </form>                                    
+            </div>
+
+        </div>
     </div>
-    <div class="modal-body">
-        <form class="form-horizontal">
-            <div class="row mb-4">
-                <label for="customerName" class="col-4 col-form-label">Customer Name:</label>
-                <div class="col">
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            <div class="row mb-4">
-                <label for="location" class="col-4 col-form-label"></label>
-                <div class="col form-checkbox-success ">
-                    <input type="checkbox" class="form-check-input" id="customCheckcolor3">&nbsp;
-                    <label class="form-check-label" for="customCheckcolor3">Restored</label>
-                </div>
-            </div>
-
-            <div class="modal-footer ">
-                <button type="button" class="btn btn-danger" (click)="activeModal.close('Cancel')">Cancel</button>            
-                <button type="button" class="btn btn-success">Clear</button>
-            </div>
-        </form>                                 
-    </div>
-
-</div><!-- /.modal-content -->
-
-
-
-
+</div>

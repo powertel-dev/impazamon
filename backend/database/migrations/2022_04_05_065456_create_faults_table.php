@@ -14,7 +14,7 @@ class CreateFaultsTable extends Migration
     public function up()
     {
         Schema::create('faults', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('customerName');
             $table->string('contactName');
             $table->integer('phoneNumber');
@@ -30,11 +30,11 @@ class CreateFaultsTable extends Migration
             $table->string('serviceAttribute');
             $table->string('faultType')->nullable();
             $table->string('priorityLevel')->nullable();
-            $table->string('assigned_to')->nullable();
+            $table->string('assigned_department')->nullable();
             $table->string('created_by')->nullable();
             $table->integer('status_id')->nullable();
             $table->string('remarks');
-            $table->string('assesRemarks')->nullable();
+            $table->string('assessRemarks')->nullable();
             $table->string('status');
             $table->timestamps();
         });

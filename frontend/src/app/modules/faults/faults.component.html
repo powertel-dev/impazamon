@@ -16,7 +16,7 @@
 
 <div class="row mb-2">
     <div class="col-sm-4">
-        <a class="btn btn-primary rounded-pill mb-3"  routerLink="./create" ><i class="mdi mdi-plus"></i> New Fault</a>
+        <a class="btn btn-primary rounded-pill mb-3"  [routerLink]="['create']" ><i class="mdi mdi-plus"></i> New Fault</a>
     </div>
 
     <div class="text-sm-end">
@@ -39,6 +39,7 @@
             <button class="btn btn-primary"><i class="fas fa-search"></i></button>
         </div>
     </div>
+
 </div> 
 <!-- end row-->
 
@@ -52,14 +53,8 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- items-->
-                    <a href="javascript:void(0);" class="dropdown-item" (click)="editModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>Edit</a>
-                    <a href="javascript:void(0);" class="dropdown-item" (click)="assessmentModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>Assessment</a>
-                    <a href="javascript:void(0);" class="dropdown-item" (click)="assignTechModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>assign technician</a>
-                    <a href="javascript:void(0);" class="dropdown-item" (click)="assessmentChecklist(fault)"><i class="mdi mdi-exit-to-app me-1"></i>assesment checklist</a>
-                    <a href="javascript:void(0);" class="dropdown-item" (click)="requestMaterialModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>request material</a>
-                    <a href="javascript:void(0);" class="dropdown-item" (click)="requestPermitModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>request permit</a>
-                    <a href="javascript:void(0);" class="dropdown-item" (click)="parkModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>Park</a>
-                    <a href="javascript:void(0);" class="dropdown-item" (click)="viewModal(fault)"><i class="mdi mdi-exit-to-app me-1"></i>View</a>
+                    <a  class="dropdown-item" [routerLink]="['edit',fault.id]"><i class="mdi mdi-exit-to-app me-1"></i>Edit</a>
+                    <a  class="dropdown-item" [routerLink]="['view',fault.id]"><i class="mdi mdi-exit-to-app me-1"></i>View</a>
                 </div>
             </div>             
   
@@ -98,3 +93,4 @@
 </div>
 <!-- end row-->
 
+<router-outlet></router-outlet>

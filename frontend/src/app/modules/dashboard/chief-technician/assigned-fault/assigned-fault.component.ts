@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AssignTechnicianComponent } from 'src/app/modules/faults/assign-technician/assign-technician.component';
+import { FaultsService } from 'src/app/services/faults.service';
 
 @Component({
   selector: 'app-assigned-fault',
@@ -8,27 +7,22 @@ import { AssignTechnicianComponent } from 'src/app/modules/faults/assign-technic
   styleUrls: ['./assigned-fault.component.css']
 })
 export class AssignedFaultComponent implements OnInit {
-  fault : any;
-  constructor(public modalService: NgbModal) { }
+
+  constructor(public rs:FaultsService) { }
 
   dtOptions: DataTables.Settings = {};
+  showContent!: boolean;
+  faults: any =[];
   
   ngOnInit() {
     this.dtOptions = {
-        pagingType: 'full_numbers',
-        pageLength: 5,
-      lengthMenu : [5, 10, 25,50, 75, 100],
-        processing: true
+          pagingType: 'full_numbers',
+          pageLength: 5,
+          lengthMenu : [5, 10, 25,50, 75, 100],
+          processing: true
       };
+      setTimeout(()=>this.showContent=true, 10);
   }
 
-  assignModal() {
-    const modalRef = this.modalService.open(AssignTechnicianComponent,{ scrollable: true });
-    modalRef.componentInstance.faultSelected = this.fault;
-
-    modalRef.result.then((yes) => {
-      console.log("Yes  click")
-    })
-  }
 
 }

@@ -14,6 +14,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './services/auth.service';
 import { AuthInterceptor } from './helpers/auth.interceptor';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AuthInterceptor } from './helpers/auth.interceptor';
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
-    DataTablesModule
+    DataTablesModule,
+    CommonModule
   ],
   providers: [
     {

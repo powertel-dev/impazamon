@@ -16,6 +16,11 @@
   font-family: "Times New Roman", Times, serif;
 }
 
+.modal-title{
+  color: blue;
+}
+
+
 /* Age status row in each component */
 #timeStatus {
   font-size: 13px;

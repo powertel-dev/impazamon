@@ -19,60 +19,17 @@ export class TechnicianFaultsComponent implements OnInit {
   constructor(public modalService: NgbModal) { }
 
   dtOptions: DataTables.Settings = {};
+  showContent!: boolean;
   
   ngOnInit() {
     this.dtOptions = {
         pagingType: 'full_numbers',
         pageLength: 5,
-      lengthMenu : [5, 10, 25,50, 75, 100],
-        processing: true
-      };
+        lengthMenu : [5, 10, 25,50, 75, 100],
+        processing: true,
+    };
+    setTimeout(()=>this.showContent=true, 10);
   }
-
-  requestPermitModal(faults: Faults) {
-    const modalRef = this.modalService.open(RequestPermitComponent,{  scrollable: true });
-    modalRef.componentInstance.selectedFault = faults;
-
-    modalRef.result.then((yes) => {
-      console.log("Yes  click")
-    })
-  }
-  requestMaterialModal(fault:Faults) {
-    const modalRef = this.modalService.open(RequestMaterialComponent,{size: 'xl', scrollable: true });
-    modalRef.componentInstance.faultSelected = fault;
-
-    modalRef.result.then((yes) => {
-      console.log("Yes  click")
-    })
-  }
-
-  parkModal(fault:Faults) {
-    const modalRef = this.modalService.open(ParkFaultComponent,{scrollable: true });
-    modalRef.componentInstance.faultSelected = fault;
-
-    modalRef.result.then((yes) => {
-      console.log("Yes  click")
-    })
-  }
-  
-  referModal() {
-    const modalRef = this.modalService.open(ReferFaultComponent,{  scrollable: true });
-    modalRef.componentInstance.faultObj = this.faults;
-
-    modalRef.result.then((yes) => {
-      console.log("Yes  click")
-
-    })
-  }
-
-  clearModal(){
-    const modalRef = this.modalService.open(ClearFaultComponent,{  scrollable: true });
-    modalRef.componentInstance.faultObj = this.faults;
-
-    modalRef.result.then((yes) => {
-      console.log("Yes  click")
-
-    })
-  }
+ 
 
 }

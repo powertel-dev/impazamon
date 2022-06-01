@@ -14,7 +14,7 @@
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item">Today</a>
                             <!-- item-->
-                            <a href="javascript:void(0);" (click)="assessmentModal()" class="dropdown-item">This Week</a>
+                            <a href="javascript:void(0);"  class="dropdown-item">This Week</a>
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item">This month</a>
                         </div>
@@ -22,14 +22,14 @@
                 </div>
                 <hr>
                 <div class="table-responsive">
-                    <table class="table table-centered table-nowrap table-hover mb-0" datatable [dtOptions]="dtOptions">
+                    <table datatable="ng" *ngIf="showContent" [dtOptions]="dtOptions" class="table table-centered table-nowrap table-hover mb-0">
                         <thead>
                             <tr>
-                            <th>Fault Id</th>
-                            <th>Customer Name</th>
-                            <th>Account Manager</th>
-                            <th>Link Name</th>
-                            <th>Actions</th>                                
+                                <th>Fault Id</th>
+                                <th>Customer Name</th>
+                                <th>Account Manager</th>
+                                <th>Link Name</th>
+                                <th>Actions</th>                                
                             </tr>
                         </thead>
                         <tbody>
@@ -45,14 +45,13 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
                                             <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">View</a>
-                                            <a href="javascript:void(0);" class="dropdown-item" (click)="assessmentModal()">Assess</a>
+                                            <a href="javascript:void(0);" class="dropdown-item" [routerLink]="['assess',fault.id]">Assess</a>
+                                            <a href="javascript:void(0);" class="dropdown-item" [routerLink]="['view',fault.id]">View</a>
                                             <!-- item-->
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            
                         </tbody>
                     </table>
                 </div> <!-- end table-responsive-->
@@ -60,6 +59,7 @@
             </div> <!-- end card body-->
         </div> <!-- end card -->
     </div><!-- end col-->
+    <router-outlet></router-outlet>
 </div>
 <!-- end row-->
 

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use DB;
 
-class suburb extends Model
+class Suburb extends Model
 {
     use HasFactory;
 
@@ -15,6 +15,16 @@ class suburb extends Model
         $data=DB::table('suburbs')->where('city_id',$city_id)->get();
         return $data;
     }  */
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function pops()
+    {
+        return $this->hasMany(Pop::class);
+    }
 
 
 }

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Faults } from 'src/app/models/faults';
-import { AssessmentFaultComponent } from 'src/app/modules/faults/assessment-fault/assessment-fault.component';
 import { FaultsService } from 'src/app/services/faults.service';
 
 @Component({
@@ -12,18 +9,19 @@ import { FaultsService } from 'src/app/services/faults.service';
 })
 export class AssessFaultsComponent implements OnInit {
 
-  constructor(public rs:FaultsService,public modalService: NgbModal) { }
+  constructor(public rs:FaultsService) { }
 
   dtOptions: DataTables.Settings = {};
   faults: any =[];
+  showContent!: boolean;
 
   
   ngOnInit() {
     this.dtOptions = {
         pagingType: 'full_numbers',
-        pageLength: 10,
-      lengthMenu : [5, 10, 25,50, 75, 100],
-        processing: true
+        pageLength: 5,
+        lengthMenu : [5, 10, 25,50, 75, 100],
+        processing: true,
       };
 
       this.getAllFaults();
@@ -33,16 +31,10 @@ export class AssessFaultsComponent implements OnInit {
     this.rs.getFaults('getfaults')
     .subscribe(res =>{
       this.faults = res;
+      setTimeout(()=>this.showContent=true, 10);
     })
   }
 
-  assessmentModal() {
-    const modalRef = this.modalService.open(AssessmentFaultComponent,{ size: 'xl', scrollable: true });
-    modalRef.componentInstance.selectedFault = this.faults;
-    modalRef.result.then((yes) => {
-      console.log("Yes  click")
-      this.getAllFaults();
-    })
-  }
+
 
 }

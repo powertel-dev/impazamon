@@ -6,8 +6,6 @@ import { AssessmentChecklistComponent } from './assessment-checklist/assessment-
 import { AssessmentFaultComponent } from './assessment-fault/assessment-fault.component';
 import { AssignTechnicianComponent } from './assign-technician/assign-technician.component';
 import { CompletionChecklistComponent } from './completion-checklist/completion-checklist.component';
-import { EditFaultComponent } from './edit-fault/edit-fault.component';
-import { FaultIntakeComponent } from './fault-intake/fault-intake.component';
 import { ParkFaultComponent } from './park-fault/park-fault.component';
 import { RequestMaterialComponent } from './request-material/request-material.component';
 import { RequestPermitComponent } from './request-permit/request-permit.component';
@@ -63,25 +61,6 @@ export class FaultsComponent implements OnInit {
     })
   }
 
-  faultIntakeModal() {
-    const modalRef = this.modalService.open(FaultIntakeComponent,{ size: 'xl', scrollable: true,backdrop: 'static',   keyboard  : false });
-    modalRef.componentInstance.faultObj = this.faults;
-
-  
-    modalRef.result.then((yes) => {
-      this.getAllFaults();
-    })
-  }
-
-  editModal(faults: Faults) {
-    const modalRef = this.modalService.open(EditFaultComponent,{ size: 'xl', scrollable: true });
-    modalRef.componentInstance.selectedFault = faults;
-
-    modalRef.result.then((yes) => {
-      console.log("Yes  click")
-      this.getAllFaults();
-    })
-  }
 
   assessmentModal(faults: Faults) {
     const modalRef = this.modalService.open(AssessmentFaultComponent,{ size: 'xl', scrollable: true });

@@ -1,121 +1,123 @@
-<div class="modal-content">
-    <div class="modal-header">
-        <h4 class="modal-title w-100 text-center" id="scrollableModalTitle">fault assesment</h4>
-        <button type="button" class="btn-close" (click)="activeModal.dismiss('Cross click')" aria-hidden="true"></button>
-    </div>
+<div id="backdrop" class="modal-backdrop fade"  data-backdrop="static" data-keyboard="false" [ngClass]="{ show: showModal}"></div>
+<div class="modal d-block fade" 
+    [ngClass]="{ show: showModal }"
+    (click)="onClose()">
+    <div class="modal-dialog modal-xl" role="document" (click)="onDialogClick($event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="scrollableModalTitle">Assessment</h4>
+                <button type="button" class="btn-close"  (click)="onClose()"></button>
+            </div>
+            <div class="modal-body">                                
+                <form>
 
-    <div class="modal-body">
-        <form [formGroup]="assessForm">
-
-            <div class="row g-2">
-                <div class="mb-3 col-md-6">
-                    <label for="customerName" class="form-label">Customer Name</label>
-                    <input type="email" class="form-control" id="customerName" formControlName="customerName">
-                </div>
-            
-                    <div class="mb-3 col-md-3">
-                        <label for="id" class="form-label">Fault Number</label>
-                        <input type="text" class="form-control" id="id"  formControlName="id">
+                    <div class="row g-2">
+                        <div class="mb-3 col-md-6">
+                            <label for="customerName" class="form-label">Customer Name</label>
+                            <input type="text" class="form-control" name="customerName" [(ngModel)]="fault.customerName">
+                        </div>
+                    
+                            <div class="mb-3 col-md-3">
+                                <label for="id" class="form-label">Fault Number</label>
+                                <input type="text" class="form-control"  name="id" [(ngModel)]="fault.id">
+                            </div>
+                    
+                        <div class="mb-3 col-md-3">
+                            <label for="linkName" class="form-label">Link Name</label>
+                            <input type="text" class="form-control" name="linkName" [(ngModel)]="fault.linkName">
+                        </div>
                     </div>
-            
-                <div class="mb-3 col-md-3">
-                    <label for="linkName" class="form-label">Link Name</label>
-                    <input type="text" class="form-control" id="linkName" formControlName="linkName">
-                </div>
-            </div>
-
-            <div class="row g-2">
-
-                <div class="mb-3 col-md-6">
-                    <label for="accManager" class="form-label">Account Manager</label>
-                    <input type="text" class="form-control" id="accManager" formControlName="accManager">
-                </div>
-
-                <div class="mb-3 col-md-2">
-                    <label for="city" class="form-label">Fault Locale</label>
-                    <input type="text" class="form-control" id="city"  formControlName="city">
-                </div>
-                <div class="mb-3 col">
-                    <label for="suburb" class="form-label">Suburb</label>
-                    <input type="text" class="form-control" id="suburb"  formControlName="suburb" >
-                </div>
-                <div class="mb-3 col">
-                    <label for="pop" class="form-label">POP</label>
-                    <input type="text" class="form-control" id="pop" formControlName="pop">
-                </div>
-            </div>
-
-            <div class="row g-2">
-                <div class="mb-3 col-md-6">
-                    <label for="suspectedRfo" class="form-label">Suspected Reason For Outage</label>
-                    <input type="text" class="form-control" id="suspectedRfo" formControlName="suspectedRFo">
-                </div>
         
-                <div class="mb-3 col-md-3">
-                    <label for="serviceType" class="form-label">Service Type</label>
-                    <input type="text" class="form-control" id="serviceType" formControlName="serviceType">
-                </div>
-                <div class="mb-3 col-md-3">
-                    <label for="faultType" class="form-label">Fault Type</label>
-                    <input type="text" class="form-control" id="faultType" formControlName="faultType">
-                </div>
+                    <div class="row g-2">
+        
+                        <div class="mb-3 col-md-6">
+                            <label for="accManager" class="form-label">Account Manager</label>
+                            <input type="text" class="form-control"  name="accountManager" [(ngModel)]="fault.accountManager">
+                        </div>
+        
+                        <div class="mb-3 col-md-2">
+                            <label for="city" class="form-label">Fault Locale</label>
+                            <input type="text" class="form-control" name="city" [(ngModel)]="fault.city">
+                        </div>
+                        <div class="mb-3 col">
+                            <label for="suburb" class="form-label">Suburb</label>
+                            <input type="text" class="form-control" name="suburb" [(ngModel)]="fault.suburb">
+                        </div>
+                        <div class="mb-3 col">
+                            <label for="pop" class="form-label">POP</label>
+                            <input type="text" class="form-control" name="pop" [(ngModel)]="fault.pop">
+                        </div>
+                    </div>
+        
+                    <div class="row g-2">
+                        <div class="mb-3 col-md-6">
+                            <label for="suspectedRfo" class="form-label">Suspected Reason For Outage</label>
+                            <input type="text" class="form-control" name="suspectedRfo" [(ngModel)]="fault.suspectedRfo">
+                        </div>
+                
+                        <div class="mb-3 col-md-3">
+                            <label for="serviceType" class="form-label">Service Type</label>
+                            <input type="text" class="form-control" name="serviceType" [(ngModel)]="fault.serviceType">
+                        </div>
+                        <div class="mb-3 col-md-3">
+                            <label for="faultType" class="form-label">Fault Type</label>
+                            <input type="text" class="form-control" name="faultType" [(ngModel)]="fault.faultType" >
+                        </div>
+                    </div>
+        
+                    <div class="row g-2">
+                        <div class="mb-3 col-md-3">
+                            <label for="serviceAtrr" class="form-label">Service Attribute</label>
+                            <input type="text" class="form-control" name="serviceAttribute" [(ngModel)]="fault.serviceAttribute">
+                        </div>
+                        <div class="mb-3 col-md-3">
+                            <label for="priorityLevel" class="form-label">Priority Level</label>
+                            <select id="priorityLevel" class="form-select" name="priorityLevel" [(ngModel)]="fault.priorityLevel">
+                                <option>Select</option>
+                                <option>Low</option>
+                                <option>Medium</option>
+                                <option>Normal</option>
+                                <option>High</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="actDepartment" class="form-label">Actioning Department</label>
+                            <select id="actDepartment" class="form-select" name="department" [(ngModel)]="fault.department">
+                                <option>Select</option>
+                                <option>NOC</option>
+                                <option>implementation</option>
+                                <option>Operations</option>
+                                <option>HR</option>
+                                <option>Finace</option>
+                                <option>Stores</option>
+                                <option>Marketing</option>
+                                <option>Procurement</option>
+                            </select>
+                        </div>                
+                    </div>
+        
+                    <div class="row g-2">
+                        <div class="mb-3 col-md-6">
+                            <label for="intakeRemarks" class="form-label">Intake Remarks</label>
+                            <textarea  class="form-control" name="remarks" [(ngModel)]="fault.remarks" ></textarea>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="asessRemarks" class="form-label">Assesment Remarks</label>
+                            <textarea  class="form-control"  name="assessRemarks" [(ngModel)]="fault.assessRemarks" ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer ">
+                        <button type="button" class="btn btn-secondary">Revoke</button>              
+                        <button type="button" class="btn btn-success">Approve</button>
+                        <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
+                    </div>
+                </form>                                   
             </div>
 
-            <div class="row g-2">
-
-                <div class="mb-3 col-md-3">
-                    <label for="serviceAtrr" class="form-label">Service Attribute</label>
-                    <input type="text" class="form-control" id="serviceAttr" formControlName="serviceAttr">
-                </div>
-                <div class="mb-3 col-md-3">
-                    <label for="priorityLevel" class="form-label">Priority Level</label>
-                    <select id="priorityLevel" class="form-select" formControlName="priorityLevel">
-                        <option>Select</option>
-                        <option>Low</option>
-                        <option>Medium</option>
-                        <option>Normal</option>
-                        <option>High</option>
-                    </select>
-                </div>
-                <div class="mb-3 col-md-6">
-                    <label for="actDepartment" class="form-label">Actioning Department</label>
-                    <select id="actDepartment" class="form-select" formControlName="actDepartment">
-                        <option>Select</option>
-                        <option>NOC</option>
-                        <option>implementation</option>
-                        <option>Operations</option>
-                        <option>HR</option>
-                        <option>Finace</option>
-                        <option>Stores</option>
-                        <option>Marketing</option>
-                        <option>Procurement</option>
-                    </select>
-                </div>                
-            </div>
-
-            <div class="row g-2">
-                <div class="mb-3 col-md-6">
-                    <label for="intakeRemarks" class="form-label">Intake Remarks</label>
-                    <textarea  class="form-control" id="remarks" formControlName="intakeRemarks" ></textarea>
-                </div>
-                <div class="mb-3 col-md-6">
-                    <label for="asessRemarks" class="form-label">Assesment Remarks</label>
-                    <textarea  class="form-control" id="asessRemarks" formControlName="asessRemarks" ></textarea>
-                </div>
-            </div>
-
-            <div class="mb-3 col-md-6">
-                <label for="uploadFile" class="form-label">Upload File</label>
-                <input class="form-control" type="file"  multiple>
-            </div>
-
-            <div class="modal-footer ">
-                <button type="button" class="btn btn-danger" (click)="activeModal.close('Cancel')">Cancel</button>
-                <button type="button" class="btn btn-secondary">Revoke</button>              
-                <button type="button" class="btn btn-success">Approve</button>
-            </div>
-        </form>                                   
+        </div>
     </div>
+</div>
 
-</div><!-- /.modal-content -->
+
 

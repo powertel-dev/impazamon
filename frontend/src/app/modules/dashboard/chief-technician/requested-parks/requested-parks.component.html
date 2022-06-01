@@ -19,45 +19,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>21244433</td>
-                                <td>OKay Marimba</td>
-                                <td>Chipangura</td>
-                                <td>3h 20min</td>
-                                <td>High</td>
+                            <tr *ngFor="let fault of faults">
+                                <td>{{fault.id}}</td>
+                                <td>{{fault.customerName}}</td>
+                                <td>{{fault.accountManager}}</td>
+                                <td>{{fault.linkName}}</td>
                                 <td class="table-action" style="width: 90px;">
                                     <div class="dropdown">
                                         <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
                                             <i class="mdi mdi-dots-horizontal"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <!-- items-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Approve</a>
-                                            <a href="javascript:void(0);" class="dropdown-item">View</a>                                            
+                                            <!-- item-->
+                                            <a href="javascript:void(0);" class="dropdown-item" [routerLink]="['assess',fault.id]">Assess</a>
+                                            <a href="javascript:void(0);" class="dropdown-item" [routerLink]="['view',fault.id]">View</a>
+                                            <!-- item-->
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>!2687982</td>
-                                <td>ZB Bank</td>
-                                <td>Chipangura</td>
-                                <td>3h 20min</td>
-                                <td>low</td>
-                                <td class="table-action" style="width: 90px;">
-                                    <div class="dropdown">
-                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="mdi mdi-dots-horizontal"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <!-- items-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Approve</a>
-                                            <a href="javascript:void(0);" class="dropdown-item">View</a>                                            
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            
                         </tbody>
                     </table>
                 </div> <!-- end table-responsive-->

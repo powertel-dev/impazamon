@@ -10,13 +10,17 @@ export class RequestedPermitsComponent implements OnInit {
   constructor() { }
 
   dtOptions: DataTables.Settings = {};
+  showContent!: boolean;
+  faults: any =[];
   
   ngOnInit() {
     this.dtOptions = {
-        pagingType: 'full_numbers',
-        pageLength: 5,
+      pagingType: 'full_numbers',
+      pageLength: 5,
       lengthMenu : [5, 10, 25,50, 75, 100],
-        processing: true
-      };
+      processing: true,
+    };
+
+    setTimeout(()=>this.showContent=true, 10);
   }
 }

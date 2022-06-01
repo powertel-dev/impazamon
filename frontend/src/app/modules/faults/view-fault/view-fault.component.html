@@ -1,96 +1,100 @@
-
-<div class="modal-content">
-    <div class="modal-header">
-        <h4 class="modal-title" id="scrollableModalTitle">new fault</h4>
-        <button type="button" class="btn-close" (click)="activeModal.dismiss('Cross click')" aria-hidden="true"></button>
-    </div>
-    <div class="modal-body">
-        <div class="row">
-            <div class="col field-box wow fadeInUp">
-                <div class="row">
-                    <div class="col-md-6">
-                        <fieldset class="fieldset border p-2">
-                            <legend class="w-auto px-2">Fault Details</legend>
-                                <div class=" py-3 my-3 px-4">
-                                    <dl class="row">
-                                        <dt class="col-md-6">CUSTOMER NAME</dt>
-                                        <dd class="col-md-6">{{faultSelected.customerName}}</dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">Last name</dt>
-                                        <dd class="col-sm-7 col-xl-8">Jatakalula</dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">Date of birth</dt>
-                                        <dd class="col-sm-7 col-xl-8">26-07-1999</dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">Gender</dt>
-                                        <dd class="col-sm-7 col-xl-8">Man</dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">Country based</dt>
-                                        <dd class="col-sm-7 col-xl-8">Zimbabwe</dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">Language</dt>
-                                        <dd class="col-sm-7 col-xl-8">English</dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">Mobile number </dt>
-                                        <dd class="col-sm-7 col-xl-8">+263786955664</dd>
-                                    </dl>
-                                </div>
-                        </fieldset>
-                    </div>
-                    <div class="col-md-6">
-                        <fieldset class="fieldset border p-2">
-                            <legend class="w-auto px-2">Fault Details</legend>
-                                <div class=" py-3 my-3 px-4">
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">FAULT ID:</dt>
-                                        <dd class="col-sm-7 col-xl-8">{{faultSelected.id}}</dd>
-                                        <dt class="col-sm-5 col-xl-4">Last name</dt>
-                                        <dd class="col-sm-7 col-xl-8">Jatakalula</dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">Last name</dt>
-                                        <dd class="col-sm-7 col-xl-8">Jatakalula</dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">Date of birth</dt>
-                                        <dd class="col-sm-7 col-xl-8">26-07-1999</dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">Gender</dt>
-                                        <dd class="col-sm-7 col-xl-8">Man</dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">Country based</dt>
-                                        <dd class="col-sm-7 col-xl-8">Zimbabwe</dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">Language</dt>
-                                        <dd class="col-sm-7 col-xl-8">English</dd>
-                                    </dl>
-                                    <dl class="row">
-                                        <dt class="col-sm-5 col-xl-4">Mobile number </dt>
-                                        <dd class="col-sm-7 col-xl-8">+263786955664</dd>
-                                    </dl>
-                                </div>
-                        </fieldset>
-                    </div>
-                </div>            
+<div id="backdrop" class="modal-backdrop fade"  data-backdrop="static" data-keyboard="false" [ngClass]="{ show: showModal}"></div>
+<div class="modal d-block fade" 
+    [ngClass]="{ show: showModal }"
+    (click)="onClose()">
+    <div class="modal-dialog modal-xl" role="document" (click)="onDialogClick($event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="scrollableModalTitle">View Fault Details</h4>
+                <button type="button" class="btn-close"  (click)="onClose()"></button>
             </div>
+            <div class="modal-body">                                
+                <form>
+                    <div class="row g-2">
+                        <div class="mb-3 col-md-6">
+                            <label for="customerName" class="form-label">Customer Name</label>
+                            <input type="email" class="form-control" name="customerName" [(ngModel)]="fault.customerName">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="serviceType" class="form-label">Service Type</label>
+                            <input type="text" class="form-control" name="serviceType" [(ngModel)]="fault.serviceType">
+                        </div>
+                    </div>
+        
+                    <div class="row g-2">
+                        <div class="mb-3 col-md-6">
+                            <label for="contactName" class="form-label">Contact Name</label>
+                            <input type="text" class="form-control"  name="contactName" [(ngModel)]="fault.contactName">
+                        </div>
+                        <div class="mb-3 col-md-2">
+                            <label for="city" class="form-label">Fault Locale</label>
+                            <input type="text" class="form-control" name="city" [(ngModel)]="fault.city">
+                        </div>
+                        <div class="mb-3 col-md-2">
+                            <label for="suburb" class="form-label">Suburb</label>
+                            <input type="text" class="form-control" name="suburb" [(ngModel)]="fault.suburb">
+                        </div>
+                        <div class="mb-3 col-md-2">
+                            <label for="pop" class="form-label">POP</label>
+                            <input type="text" class="form-control" name="pop" [(ngModel)]="fault.pop">
+                        </div>
+                    </div>
+        
+                    <div class="row g-2">
+                        <div class="mb-3 col-md-6">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control"  placeholder="Phone" name="phoneNumber" [(ngModel)]="fault.phoneNumber">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="linkName" class="form-label">Link Name</label>
+                            <input type="text" class="form-control" name="linkName" [(ngModel)]="fault.linkName">
+                        </div>
+                    </div>
+                    <div class="row g-2">
+                        <div class="mb-3 col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" name="contactEmail" [(ngModel)]="fault.contactEmail">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="suspectedRfo" class="form-label">Suspected Reason For Outage</label>
+                            <input type="text" class="form-control" name="suspectedRfo" [(ngModel)]="fault.suspectedRfo">
+                        </div>
+                    </div>
+        
+                    <div class="row g-2">
+                        <div class="mb-3 col-md-6">
+                            <label for="adress" class="form-label">Address</label>
+                            <input type="text" class="form-control" name="address" [(ngModel)]="fault.address">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="serviceAtrr" class="form-label">Service Attribute</label>
+                            <input type="text" class="form-control" name="serviceAttribute" [(ngModel)]="fault.serviceAttribute">
+                        </div>
+                    </div>
+        
+                    <div class="row g-2">
+                        <div class="mb-3 col-md-6">
+                            <label for="accManager" class="form-label">Account Manager</label>
+                            <input type="text" class="form-control"  name="accountManager" [(ngModel)]="fault.accountManager">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label for="remarks" class="form-label">Remarks</label>
+                            <textarea name="remarks" class="form-control" name="remarks" [(ngModel)]="fault.remarks" ></textarea>
+                        </div>
+                    </div>
+                    <div class="row g-2">
+                        <div class="mb-3 col-md-6">
+                            <button type="button" class="btn">
+                                <a href="javascript:void(0);" class="dropdown-item" [routerLink]="['remarks']">View Remarks</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
+                    </div>                        
+                </form>                                   
+            </div>
+
         </div>
     </div>
-    
-    <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
-    </div>
-
 </div>
-
-
-
-

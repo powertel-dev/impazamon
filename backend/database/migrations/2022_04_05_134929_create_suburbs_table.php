@@ -14,10 +14,13 @@ class CreateSuburbsTable extends Migration
     public function up()
     {
         Schema::create('suburbs', function (Blueprint $table) {
-            $table->id();
-            $table->integer('city_id');
+            $table->increments('id');
+            $table->unsignedInteger('city_id');
             $table->string('suburb');
             $table->timestamps();
+            $table->foreign('city_id')
+                    ->references('id')
+                    ->on('cities');
         });
     }
 
