@@ -15,7 +15,13 @@ class CreateStatusesTable extends Migration
     {
         Schema::create('statuses', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('fault_id');
+            $table->string('status');
+            $table->string('description');
             $table->timestamps();
+            $table->foreign('fault_id')
+            ->references('id')
+            ->on('faults');
         });
     }
 

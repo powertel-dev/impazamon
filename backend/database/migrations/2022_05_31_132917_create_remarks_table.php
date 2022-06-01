@@ -15,7 +15,12 @@ class CreateRemarksTable extends Migration
     {
         Schema::create('remarks', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('fault_id');
+            $table->string('remarks');
             $table->timestamps();
+            $table->foreign('fault_id')
+            ->references('id')
+            ->on('faults');
         });
     }
 
